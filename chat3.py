@@ -12,28 +12,15 @@ run_with_ngrok(app)
 
 os.environ["OPENAI_API_KEY"] = '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'
 
-def construct_index(directory_path):
-    max_input_size = 4096
-    num_outputs = 256
-    max_chunk_overlap = 20
-    chunk_size_limit = 600
+import json
 
-    llm_predictor = LLMPredictor(llm=OpenAI(temperature=0, model_name="text-davinci-003", max_tokens=num_outputs))
-    prompt_helper = PromptHelper(max_input_size, num_outputs, max_chunk_overlap, chunk_size_limit=chunk_size_limit)
-
-    documents = SimpleDirectoryReader(directory_path).load_data()
-
-    index = GPTSimpleVectorIndex(
-      documents, llm_predictor=llm_predictor, prompt_helper=prompt_helper, verbose=True
-      
-  )
-    
-    index.save_to_disk('index.json')
-
+def load_index():
+    with open('index.json', 'r') as f:
+        index_dict = json.load(f)
+    index = GPTListIndex(index_dict)
     return index
 
-book_path = input("Enter the path to the directory containing your documents: ")
-index = construct_index(book_path)
+index = load_index()
 
 # Initialize the history list
 history = []

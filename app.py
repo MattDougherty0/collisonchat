@@ -14,13 +14,13 @@ os.environ["OPENAI_API_KEY"] = 'sk-mq8VgRwLjQu0WX3dnU1oT3BlbkFJAJ9SFdiZ0nkRR7IC7
 
 import json
 
-def load_index():
-    with open('index.json', 'r') as f:
-        index_dict = json.load(f)
-    index = GPTListIndex(index_dict)
-    return index
+# Load the index data from the file
+index_filename = 'index.json'
+with open(index_filename, 'r') as f:
+    index_data = json.load(f)
 
-index = load_index()
+# Create the GPT index object
+index = GPTSimpleVectorIndex(index_data)
 
 # Initialize the history list
 history = []

@@ -1,0 +1,54 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Chatbot</title>
+  <style>
+    input[type="text"] {
+      width: 500px;
+      height: 30px;
+      font-size: 14px;
+    }
+    input[type="submit"] {
+      background-color: blue;
+      color: white;
+      width: 100px;
+      height: 25px;
+      border-radius: 20px;
+      font-size: 12px;
+    }
+    .response {
+      width: 550px;
+    }
+    #image {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      width: 750px; /* adjust this value based on your needs */
+      z-index: -1;
+    }
+  </style>
+</head>
+<body>
+  <img src="https://millennialentrepreneurs.com/wp-content/uploads/2020/10/Pat.jpg" id="image">
+  <h1>Welcome to my chatbot :)</h1>
+  <p>Ask anything you would like &amp; I'll try to answer! :)</p>
+  <form action="{{ url_for('chatbot')}}" method="post">
+    <input name="query" type="text" />
+    <input type="submit" value="Ask" />
+  </form>
+  <h3>Response:</h3>
+  <p class="response">{{ answer }}</p>
+  {% if history %}
+  <h3>History:</h3>
+  <ul>
+  {% for query, answer in history %}
+  <li><strong>Query:</strong> {{ query }}</li>
+  <li><strong>Answer:</strong> {{ answer }}</li>
+  {% endfor %}
+  </ul>
+  {% endif %}
+</body>
+</html>
+
+

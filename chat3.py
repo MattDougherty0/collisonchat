@@ -1,10 +1,3 @@
-!pip install Flask
-!pip install gpt_index
-!pip install ngrok
-!pip install langchain
-!pip install openAI
-
-
 from flask import Flask, request, render_template
 from flask_ngrok import run_with_ngrok
 from langchain.chains import llm

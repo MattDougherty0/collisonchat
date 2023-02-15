@@ -1,4 +1,5 @@
 !pip install Flask
+!pip install gpt_index
 !pip install ngrok
 !pip install langchain
 !pip install openAI

@@ -1,1 +1,1 @@
-web: gunicorn chat3:app
+web: gunicorn app:app

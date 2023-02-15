@@ -10,7 +10,7 @@ import os
 app = Flask(__name__)
 run_with_ngrok(app)
 
-os.environ["OPENAI_API_KEY"] = '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'
+os.environ["OPENAI_API_KEY"] = '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'
 
 def construct_index(directory_path):
     max_input_size = 4096

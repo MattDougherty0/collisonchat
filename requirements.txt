@@ -3,4 +3,4 @@ langchain
 Flask
 flask-ngrok
 openAI
-gunicorn==20.1.0
+waitress

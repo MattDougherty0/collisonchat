@@ -1,4 +1,0 @@
-pip install gpt_index
-pip install langchain
-pip install flask 
-pip install openAI

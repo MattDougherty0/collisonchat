@@ -1,3 +1,7 @@
+!pip install Flask
+
+
+
 from flask import Flask, request, render_template
 from flask_ngrok import run_with_ngrok
 from langchain.chains import llm

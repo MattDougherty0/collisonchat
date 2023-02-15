@@ -1,5 +1,7 @@
 !pip install Flask
-
+!pip install ngrok
+!pip install langchain
+!pip install openAI
 
 
 from flask import Flask, request, render_template

@@ -3,4 +3,4 @@ langchain
 Flask
 flask-ngrok
 openAI
-gunicorn
+gunicorn==20.1.0

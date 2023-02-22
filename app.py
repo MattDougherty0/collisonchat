@@ -4,6 +4,7 @@ from langchain.chains import llm
 from ast import Index
 from gpt_index import SimpleDirectoryReader, GPTListIndex, readers, GPTSimpleVectorIndex, LLMPredictor, PromptHelper
 from langchain import OpenAI
+from waitress import serve
 import sys
 import os
 
@@ -45,4 +46,5 @@ def chatbot():
     return render_template('index.html', history=history)
 
 if __name__ == '__main__':
-    app.run()
+    #app.run()
+    serve(app)

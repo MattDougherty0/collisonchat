@@ -9,7 +9,6 @@ import sys
 import os
 
 app = Flask(__name__)
-run_with_ngrok(app)
 
 os.environ["OPENAI_API_KEY"] = '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'
 

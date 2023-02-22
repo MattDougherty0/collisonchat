@@ -16,7 +16,7 @@ os.environ["OPENAI_API_KEY"] = 'sk-mq8VgRwLjQu0WX3dnU1oT3BlbkFJAJ9SFdiZ0nkRR7IC7
 import json
 
 # Load the index data from the file
-index_filename = 'index.json'
+index_filename = 'index-3.json'
 with open(index_filename, 'r') as f:
     index_data = json.load(f)
 
